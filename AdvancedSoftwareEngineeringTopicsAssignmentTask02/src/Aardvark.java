@@ -745,8 +745,7 @@ public class Aardvark {
         File f = new File("score.txt");
         if (!(f.exists() && f.isFile() && f.canRead())) {
           System.out.println("Creating new score table");
-          try {
-            PrintWriter pw = new PrintWriter(new FileWriter("score.txt", true));
+          try {PrintWriter pw = new PrintWriter(new FileWriter("score.txt", true));
             String n = playerName.replaceAll(",", "_");
             pw.print("Hugh Jass");
             pw.print(",");
@@ -759,7 +758,6 @@ public class Aardvark {
             pw.print(",");
             pw.println(1281625395123L);
             pw.flush();
-            pw.close();
           } catch (Exception e) {
             System.out.println("Something went wrong saving scores");
           }
