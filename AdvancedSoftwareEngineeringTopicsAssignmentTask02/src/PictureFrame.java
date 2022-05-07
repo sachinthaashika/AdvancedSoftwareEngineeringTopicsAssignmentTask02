@@ -6,6 +6,25 @@ public class PictureFrame {
   public int[] reroll = null;
   Aardvark master = null;
 
+  public DominoPanel dp;
+
+  public void PictureFrame(Aardvark sf) {
+    master = sf;
+    if (dp == null) {
+      JFrame f = new JFrame("Abominodo");
+      dp = new DominoPanel();
+      f.setContentPane(dp);
+      f.pack();
+      f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+      f.setVisible(true);
+    }
+  }
+
+  public void reset() {
+    // TODO Auto-generated method stub
+
+  }
+  
   class DominoPanel extends JPanel {
     private static final long serialVersionUID = 4190229282411119364L;
 
@@ -108,23 +127,6 @@ public class PictureFrame {
     }
   }
 
-  public DominoPanel dp;
 
-  public void PictureFrame(Aardvark sf) {
-    master = sf;
-    if (dp == null) {
-      JFrame f = new JFrame("Abominodo");
-      dp = new DominoPanel();
-      f.setContentPane(dp);
-      f.pack();
-      f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-      f.setVisible(true);
-    }
-  }
-
-  public void reset() {
-    // TODO Auto-generated method stub
-
-  }
 
 }
