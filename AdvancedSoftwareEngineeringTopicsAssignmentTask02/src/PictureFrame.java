@@ -78,32 +78,32 @@ public class PictureFrame {
     }
 
     void drawDigitGivenCentre(Graphics g, int x, int y, int diameter, int n) {
-      int radius = diameter / 2;
+      final int radius = diameter / 2;
       g.setColor(Color.BLACK);
       // g.drawOval(x - radius, y - radius, diameter, diameter);
-      FontMetrics fm = g.getFontMetrics();
-      String txt = Integer.toString(n);
+      final FontMetrics fm = g.getFontMetrics();
+      final String txt = Integer.toString(n);
       g.drawString(txt, x - fm.stringWidth(txt) / 2, y + fm.getMaxAscent() / 2);
     }
 
     void drawDigitGivenCentre(Graphics g, int x, int y, int diameter, int n,
         Color c) {
-      int radius = diameter / 2;
+      final int radius = diameter / 2;
       g.setColor(c);
       // g.drawOval(x - radius, y - radius, diameter, diameter);
-      FontMetrics fm = g.getFontMetrics();
-      String txt = Integer.toString(n);
+      final FontMetrics fm = g.getFontMetrics();
+      final String txt = Integer.toString(n);
       g.drawString(txt, x - fm.stringWidth(txt) / 2, y + fm.getMaxAscent() / 2);
     }
 
     void fillDigitGivenCentre(Graphics g, int x, int y, int diameter, int n) {
-      int radius = diameter / 2;
+      final int radius = diameter / 2;
       g.setColor(Color.GREEN);
       g.fillOval(x - radius, y - radius, diameter, diameter);
       g.setColor(Color.BLACK);
       g.drawOval(x - radius, y - radius, diameter, diameter);
-      FontMetrics fm = g.getFontMetrics();
-      String txt = Integer.toString(n);
+      final FontMetrics fm = g.getFontMetrics();
+      final String txt = Integer.toString(n);
       g.drawString(txt, x - fm.stringWidth(txt) / 2, y + fm.getMaxAscent() / 2);
     }
 
