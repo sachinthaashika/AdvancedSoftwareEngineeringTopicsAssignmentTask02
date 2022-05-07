@@ -11,6 +11,8 @@ public class PictureFrame {
   public void PictureFrame(Aardvark sf) {
     master = sf;
     if (dp == null) {
+    	return;
+    }
       JFrame f = new JFrame("Abominodo");
       dp = new DominoPanel();
       f.setContentPane(dp);
@@ -18,7 +20,7 @@ public class PictureFrame {
       f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
       f.setVisible(true);
     }
-  }
+  
 
   public void reset() {
     // TODO Auto-generated method stub
