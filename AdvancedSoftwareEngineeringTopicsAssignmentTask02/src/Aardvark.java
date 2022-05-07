@@ -157,11 +157,6 @@ public class Aardvark {
   }
 
   private void rotateDominoes() {
-    // for (Domino d : dominoes) {
-    // if (Math.random() > 0.5) {
-    // System.out.println("rotating " + d);
-    // }
-    // }
     for (int x = 0; x < 7; x++) {
       for (int y = 0; y < 6; y++) {
 
