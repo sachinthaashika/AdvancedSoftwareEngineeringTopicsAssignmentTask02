@@ -4,8 +4,7 @@ public class Location extends SpacePlace {
   public int r;
   public DIRECTION d;
   
-  public enum DIRECTION {VERTICAL, HORIZONTAL};
-  
+
   public Location(int r, int c) {
     this.r = r;
     this.c = c;
@@ -23,4 +22,7 @@ public class Location extends SpacePlace {
       return "(" + (c+1) + "," + (r+1) + "," + d + ")";
     }
   }
+  
+  public enum DIRECTION {VERTICAL, HORIZONTAL};
 }
+
