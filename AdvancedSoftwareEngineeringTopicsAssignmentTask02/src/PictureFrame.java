@@ -20,7 +20,6 @@ public class PictureFrame {
       f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
       f.setVisible(true);
     }
-  
 
   public void reset() {
     // TODO Auto-generated method stub
@@ -60,7 +59,9 @@ public class PictureFrame {
     }
 
     public void drawDomino(Graphics g, Domino d) {
-      if (d.placed) {
+    	if (!(d.placed)){
+    		return;
+    	}
         int y = Math.min(d.ly, d.hy);
         int x = Math.min(d.lx, d.hx);
         int w = Math.abs(d.lx - d.hx) + 1;
@@ -73,7 +74,7 @@ public class PictureFrame {
             Color.BLUE);
         drawDigitGivenCentre(g, 30 + d.lx * 20, 30 + d.ly * 20, 20, d.low,
             Color.BLUE);
-      }
+      
     }
 
     void drawDigitGivenCentre(Graphics g, int x, int y, int diameter, int n) {
