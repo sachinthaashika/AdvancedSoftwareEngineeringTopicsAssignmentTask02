@@ -16,10 +16,12 @@ public class Location extends SpacePlace {
   }
   
   public String toString() {
-    if(d==null){
-      return "(" + (c+1) + "," + (r+1) + ")";
-    } else {
-      return "(" + (c+1) + "," + (r+1) + "," + d + ")";
+	    if(d==null){
+	      return new StringBuilder().append("(").append(c+1).append(",")
+	    		  .append(r+1).append(")").toString();
+	    } else {
+	      return new StringBuilder().append("(").append(c+1).append(",")
+	    		  .append(r+1).append(",").append(d).append(")").toString();
     }
   }
   

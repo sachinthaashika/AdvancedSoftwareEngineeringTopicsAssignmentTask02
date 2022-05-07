@@ -24,20 +24,20 @@ public class Aardvark {
   PictureFrame pf = new PictureFrame();
 
   private void generateDominoes() {
-    _d = new LinkedList<Domino>();
-    int count = 0;
-    int x = 0;
-    int y = 0;
-    for (int l = 0; l <= 6; l++) {
-      for (int h = l; h <= 6; h++) {
-        Domino d = new Domino(h, l);
-        _d.add(d);
-        d.place(x, y, x + 1, y);
-        count++;
-        x += 2;
-        if (x > 6) {
-          x = 0;
-          y++;
+	    _d = new LinkedList<>();
+	    int count = 0;
+	    int x = 0;
+	    int y = 0;
+	    for (int l = 0; l <= 6; l++) {
+	      for (int h = l; h <= 6; h++) {
+	        Domino d = new Domino(h, l);
+	        _d.add(d);
+	        d.place(x, y, x + 1, y);
+	        count++;
+	        x += 2;
+	        if (x > 6) {
+	          x = 0;
+	          y++;
         }
       }
     }
@@ -48,13 +48,13 @@ public class Aardvark {
   }
 
   private void generateGuesses() {
-    _g = new LinkedList<Domino>();
-    int count = 0;
-    for (int l = 0; l <= 6; l++) {
-      for (int h = l; h <= 6; h++) {
-        Domino d = new Domino(h, l);
-        _g.add(d);
-        count++;
+	    _g = new LinkedList<>();
+	    int count = 0;
+	    for (int l = 0; l <= 6; l++) {
+	      for (int h = l; h <= 6; h++) {
+	        Domino d = new Domino(h, l);
+	        _g.add(d);
+	        count++;
       }
     }
     if (count != 28) {
@@ -745,7 +745,7 @@ public class Aardvark {
         File f = new File("score.txt");
         if (!(f.exists() && f.isFile() && f.canRead())) {
           System.out.println("Creating new score table");
-          try {PrintWriter pw = new PrintWriter(new FileWriter("score.txt", true));
+          try (PrintWriter pw = new PrintWriter(new FileWriter("score.txt", true))){
             String n = playerName.replaceAll(",", "_");
             pw.print("Hugh Jass");
             pw.print(",");
