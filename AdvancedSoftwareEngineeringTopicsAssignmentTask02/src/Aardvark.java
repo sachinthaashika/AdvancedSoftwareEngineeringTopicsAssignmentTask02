@@ -118,7 +118,7 @@ public class Aardvark {
   }
 
   private void shuffleDominoesOrder() {
-    List<Domino> shuffled = new LinkedList<Domino>();
+    List<Domino> shuffled = new LinkedList<>();
 
     while (_d.size() > 0) {
       int n = (int) (Math.random() * _d.size());
