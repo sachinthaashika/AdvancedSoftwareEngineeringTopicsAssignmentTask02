@@ -821,8 +821,7 @@ public class Aardvark {
   }
 
   private void recordTheScore() {
-    try {
-      PrintWriter pw = new PrintWriter(new FileWriter("score.txt", true));
+    try (PrintWriter pw = new PrintWriter(new FileWriter("score.txt", true))){
       String n = playerName.replaceAll(",", "_");
       pw.print(n);
       pw.print(",");
@@ -830,7 +829,6 @@ public class Aardvark {
       pw.print(",");
       pw.println(System.currentTimeMillis());
       pw.flush();
-      pw.close();
     } catch (Exception e) {
       System.out.println("Something went wrong saving scores");
     }
