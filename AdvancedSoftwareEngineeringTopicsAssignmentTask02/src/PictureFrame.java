@@ -117,7 +117,9 @@ public class PictureFrame {
         drawGrid(g);
         master.drawGuesses(g);
       }
-      if (master.mode == 0) {
+      if (master.mode != 0) {
+    	  return;
+      }
         drawGridLines(g);
         drawHeadings(g);
         drawGrid(g);
@@ -132,4 +134,4 @@ public class PictureFrame {
 
 
 
-}
+
