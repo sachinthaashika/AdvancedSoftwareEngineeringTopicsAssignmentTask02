@@ -62,10 +62,10 @@ public class PictureFrame {
     	if (!(d.placed)){
     		return;
     	}
-        int y = Math.min(d.ly, d.hy);
-        int x = Math.min(d.lx, d.hx);
-        int w = Math.abs(d.lx - d.hx) + 1;
-        int h = Math.abs(d.ly - d.hy) + 1;
+        final int y = Math.min(d.ly, d.hy);
+        final int x = Math.min(d.lx, d.hx);
+        final int w = Math.abs(d.lx - d.hx) + 1;
+        final int h = Math.abs(d.ly - d.hy) + 1;
         g.setColor(Color.WHITE);
         g.fillRect(20 + x * 20, 20 + y * 20, w * 20, h * 20);
         g.setColor(Color.RED);
