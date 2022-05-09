@@ -21,7 +21,7 @@ public class Domino implements Comparable<Domino> {
     this.ly = ly;
     placed = true;
   }
-
+  @Override
   public String toString() {
     StringBuffer result = new StringBuffer();
     result.append("[");

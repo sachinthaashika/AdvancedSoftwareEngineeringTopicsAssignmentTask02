@@ -89,7 +89,7 @@ public class Aardvark {
     }
   }
 
-  int pg() {
+  int printGuess() {
     for (int are = 0; are < 7; are++) {
       for (int see = 0; see < 8; see++) {
         if (grid[are][see] != 9) {
@@ -360,7 +360,7 @@ public class Aardvark {
           collateGrid();
           break;
         }
-        pg();
+        printGuess();
         generateGuesses();
         collateGuessGrid();
         mode = 1;
@@ -402,7 +402,7 @@ public class Aardvark {
 
             break;
           case 1:
-            pg();
+        	  printGuess();
             break;
           case 2:
             printGuessGrid();
@@ -714,7 +714,7 @@ public class Aardvark {
 
         }
         mode = 0;
-        pg();
+        printGuess();
         pf.dp.repaint();
         long now = System.currentTimeMillis();
         try {
