@@ -130,11 +130,11 @@ public class Aardvark {
   }
 
   private void invertSomeDominoes() {
-    for (Domino d : _d) {
+	  _d.forEach(d -> {
       if (Math.random() > 0.5) {
         d.invert();
       }
-    }
+    });
   }
 
   private void placeDominoes() {
