@@ -64,16 +64,16 @@ public class Aardvark {
   }
 
   void collateGrid() {
-    for (Domino d : _d) {
-      if (!d.placed) {
-        grid[d.hy][d.hx] = 9;
-        grid[d.ly][d.lx] = 9;
-      } else {
-        grid[d.hy][d.hx] = d.high;
-        grid[d.ly][d.lx] = d.low;
-      }
-    }
-  }
+	    _d.forEach(d ->{
+	      if (!d.placed) {
+	        grid[d.hy][d.hx] = 9;
+	        grid[d.ly][d.lx] = 9;
+	      } else {
+	        grid[d.hy][d.hx] = d.high;
+	        grid[d.ly][d.lx] = d.low;
+	      }
+	    });
+	  }
 
   void collateGuessGrid() {
     for (int r = 0; r < 7; r++) {
@@ -81,13 +81,13 @@ public class Aardvark {
         gg[r][c] = 9;
       }
     }
-    for (Domino d : _g) {
-      if (d.placed) {
-        gg[d.hy][d.hx] = d.high;
-        gg[d.ly][d.lx] = d.low;
-      }
+    _g.forEach(d -> {
+        if (d.placed) {
+          gg[d.hy][d.hx] = d.high;
+          gg[d.ly][d.lx] = d.low;
+        }
+      });
     }
-  }
 
   int printGuess() {
     for (int are = 0; are < 7; are++) {
