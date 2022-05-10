@@ -29,35 +29,34 @@ public class PictureFrame {
   class DominoPanel extends JPanel {
     private static final long serialVersionUID = 4190229282411119364L;
 
+public static final int ColorVal=20;
+public static final int DrawVal=30;
+
     public void drawGrid(Graphics g) {
       for (int are = 0; are < 7; are++) {
         for (int see = 0; see < 8; see++) {
-          drawDigitGivenCentre(g, 30 + see * 20, 30 + are * 20, 20,
+          drawDigitGivenCentre(g, DrawVal  + see * ColorVal, DrawVal + are * ColorVal, ColorVal,
               master.grid[are][see]);
         }
       }
     }
-
     public void drawGridLines(Graphics g) {
       g.setColor(Color.LIGHT_GRAY);
       for (int are = 0; are <= 7; are++) {
-        g.drawLine(20, 20 + are * 20, 180, 20 + are * 20);
+        g.drawLine(ColorVal, ColorVal + are * ColorVal, 180, ColorVal + are * ColorVal);
       }
       for (int see = 0; see <= 8; see++) {
-        g.drawLine(20 + see * 20, 20, 20 + see * 20, 160);
+        g.drawLine(ColorVal + see * ColorVal, ColorVal, ColorVal + see * ColorVal, 160);
       }
     }
-
     public void drawHeadings(Graphics g) {
       for (int are = 0; are < 7; are++) {
-        fillDigitGivenCentre(g, 10, 30 + are * 20, 20, are+1);
+        fillDigitGivenCentre(g, 10, DrawVal + are * ColorVal, ColorVal, are+1);
       }
-
       for (int see = 0; see < 8; see++) {
-        fillDigitGivenCentre(g, 30 + see * 20, 10, 20, see+1);
+        fillDigitGivenCentre(g, DrawVal + see * ColorVal, 10, ColorVal, see+1);
       }
     }
-
     public void drawDomino(Graphics g, Domino d) {
     	if (!(d.placed)){
     		return;
@@ -67,12 +66,12 @@ public class PictureFrame {
         final int w = Math.abs(d.lx - d.hx) + 1;
         final int h = Math.abs(d.ly - d.hy) + 1;
         g.setColor(Color.WHITE);
-        g.fillRect(20 + x * 20, 20 + y * 20, w * 20, h * 20);
+        g.fillRect(ColorVal + x * ColorVal, ColorVal + y * ColorVal, w * ColorVal, h * ColorVal);
         g.setColor(Color.RED);
-        g.drawRect(20 + x * 20, 20 + y * 20, w * 20, h * 20);
-        drawDigitGivenCentre(g, 30 + d.hx * 20, 30 + d.hy * 20, 20, d.high,
+        g.drawRect(20 + x * ColorVal, ColorVal + y * ColorVal, w * ColorVal, h * ColorVal);
+        drawDigitGivenCentre(g, DrawVal + d.hx * ColorVal, DrawVal + d.hy * ColorVal, ColorVal, d.high,
             Color.BLUE);
-        drawDigitGivenCentre(g, 30 + d.lx * 20, 30 + d.ly * 20, 20, d.low,
+        drawDigitGivenCentre(g, DrawVal + d.lx * ColorVal, DrawVal + d.ly * ColorVal, ColorVal, d.low,
             Color.BLUE);
       
     }
