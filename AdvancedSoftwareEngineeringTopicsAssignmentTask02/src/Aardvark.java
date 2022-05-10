@@ -667,14 +667,14 @@ public class Aardvark {
                   l.add(new Location(r, c));
                 }
               }
-              for (Domino key : map.keySet()) {
-                List<Location> locs = map.get(key);
-                if (locs.size() == 1) {
-                  Location loc = locs.get(0);
-                  System.out.printf("[%d%d]", key.high, key.low);
-                  System.out.println(loc);
-                }
-              }
+              map.keySet().forEach(key -> {
+                  List<Location> locs = map.get(key);
+                  if (locs.size() == 1) {
+                    Location loc = locs.get(0);
+                    System.out.printf("[%d%d]", key.high, key.low);
+                    System.out.println(loc);
+                  }
+                });
               break;
             }
 
