@@ -699,14 +699,14 @@ public class Aardvark {
                   l.add(new Location(r, c));
                 }
               }
-              for (Domino key : map.keySet()) {
+              map.keySet().forEach(key -> {
                 System.out.printf("[%d%d]", key.high, key.low);
                 List<Location> locs = map.get(key);
-                for (Location loc : locs) {
+                locs.forEach(loc -> {
                   System.out.print(loc);
-                }
+                });
                 System.out.println();
-              }
+              });
               break;
             }
             }
