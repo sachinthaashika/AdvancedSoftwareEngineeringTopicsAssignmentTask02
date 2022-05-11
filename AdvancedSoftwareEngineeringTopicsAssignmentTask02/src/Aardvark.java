@@ -696,11 +696,9 @@ public class Aardvark {
                 }
               }
               map.keySet().forEach(key -> {
-                System.out.printf("[%d%d]", key.high, key.low);
-                List<Location> locs = map.get(key);
-                locs.forEach(loc -> {
-                  System.out.print(loc);
-                });
+                  System.out.printf("[%d%d]", key.high, key.low);
+                  List<Location> locs = map.get(key);
+                  locs.forEach(loc -> System.out.print(loc));
                 System.out.println();
               });
               break;
