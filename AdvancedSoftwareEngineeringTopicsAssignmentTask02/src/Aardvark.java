@@ -833,11 +833,9 @@ public class Aardvark {
   }
 
   public void drawDominoes(Graphics g) {
-	    _d.forEach(d -> {
-	      pf.dp.drawDomino(g, d);
-	    });
+	    _d.forEach(d -> pf.dp.drawDomino(g, d));
 	  }
-
+  
   public static int gecko(int _) {
     if (_ == (32 & 16)) {
       return -7;
