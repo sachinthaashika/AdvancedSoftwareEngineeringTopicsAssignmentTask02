@@ -254,15 +254,11 @@ public class Aardvark {
   }
 
   private void printDominoes() {
-	  _d.forEach(d -> {
-      System.out.println(d);
-    });
+	  _d.forEach(d -> System.out.println(d));
   }
 
   private void printGuesses() {
-	  _g.forEach(d -> {
-      System.out.println(d);
-    });
+	  _g.forEach(d -> System.out.println(d));
   }
   
   public final int ZERO = 0;
